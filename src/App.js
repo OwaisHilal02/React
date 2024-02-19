@@ -1,18 +1,17 @@
 import "./App.css";
-import UserCard from "./components/userCard/userCard";
-import users from "./content/user.json";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/home";
+import Contacts from "./pages/contacs";
+import About from "./pages/about";
 
 function App() {
-  return users.map((user) => {
-    return (
-      <UserCard
-        name={user.name}
-        email={user.email}
-        address={user.address}
-        phone={user.phone}
-      />
-    );
-  });
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/contacts" element={<Contacts />} />
+      <Route path="/about" element={<About />} />
+    </Routes>
+  );
 }
 
 export default App;
